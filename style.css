@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  font-family: "Segoe UI", "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.calculator {
+  width: 320px;
+  background: linear-gradient(135deg, #232526 0%, #2c3e50 100%);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), 0 1.5px 8px 0 #0008;
+  overflow: hidden;
+  margin-top: 40px;
+  animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.7) translateY(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.display {
+  background: linear-gradient(90deg, #232526 0%, #485563 100%);
+  color: #fff;
+  font-size: 48px;
+  text-align: right;
+  padding: 28px 24px 18px 24px;
+  box-sizing: border-box;
+  min-height: 64px;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #2228;
+  user-select: all;
+  transition: background 0.3s;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 18px 18px 24px 18px;
+  background: transparent;
+}
+
+button {
+  padding: 18px;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background: linear-gradient(135deg, #232526 0%, #333 100%);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0004;
+  margin: 0 2px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #444 0%, #555 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px #0006;
+}
+
+button:active {
+  background: linear-gradient(135deg, #232526 0%, #222 100%);
+  transform: scale(0.98);
+}
+
+button.operator {
+  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+  color: #222;
+  font-weight: bold;
+  box-shadow: 0 2px 12px #f1a33c44;
+  transition: background 0.2s, color 0.2s;
+}
+
+button.operator:hover {
+  background: linear-gradient(135deg, #ffd200 0%, #f7971e 100%);
+  color: #000;
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+/* Footer styles */
+.footer {
+  width: 100vw;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 18px 0 10px 0;
+  background: transparent;
+  letter-spacing: 1px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  opacity: 0.85;
+  animation: fadeInFooter 1.2s 0.5s both;
+}
+
+@keyframes fadeInFooter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+}
